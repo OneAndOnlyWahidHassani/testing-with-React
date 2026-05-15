@@ -1,0 +1,197 @@
+:root {
+    --dark-bg: #1a1a1a;
+    --dark-card: #2d2d2d;
+    --accent-yellow: #ffc107;
+    --text-light: #e0e0e0;
+    --border-dark: #444
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box
+}
+
+body {
+    font-family: Segoe UI, Arial, sans-serif;
+    background: #0f0f0f;
+    color: var(--text-light);
+    margin: 0;
+    padding: 20px
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 24px;
+    background: var(--dark-bg);
+    padding: 32px;
+    border-radius: 12px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5)
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 32px;
+    grid-column: 1/-1;
+    color: var(--accent-yellow);
+    text-shadow: 0 2px 8px rgba(255, 193, 7, 0.3)
+}
+
+h2 {
+    color: var(--accent-yellow);
+    font-size: 1.2rem;
+    margin-bottom: 16px
+}
+
+.add-movie {
+    background: var(--dark-card);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-yellow)
+}
+
+.movie-form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+.movie-form label {
+    display: flex;
+    flex-direction: column;
+    font-weight: 600;
+    color: var(--text-light);
+    margin-bottom: 6px
+}
+
+.movie-form input,
+.movie-form select {
+    padding: 12px;
+    border: 2px solid var(--border-dark);
+    background: #1a1a1a;
+    color: var(--text-light);
+    border-radius: 6px;
+    font-size: 1rem
+}
+
+.movie-form input:focus,
+.movie-form select:focus {
+    outline: none;
+    border-color: var(--accent-yellow);
+    box-shadow: 0 0 8px rgba(255, 193, 7, 0.3)
+}
+
+.btn {
+    background: var(--accent-yellow);
+    color: #000;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s
+}
+
+.btn:hover {
+    background: #ffb300;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.3)
+}
+
+.btn.save {
+    background: #4CAF50;
+    color: white
+}
+
+.btn.save:hover {
+    background: #45a049;
+    background: linear-gradient(135deg, #66bb6a, #4CAF50)
+}
+
+.movie-section {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 16px
+}
+
+.controls {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 16px
+}
+
+.movie-list {
+    background: var(--dark-card);
+    padding: 24px;
+    border-radius: 8px;
+    border-left: 4px solid var(--accent-yellow)
+}
+
+.movies {
+    list-style: none;
+    padding: 0;
+    margin: 0
+}
+
+.movie-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    border: 1px solid var(--border-dark);
+    background: linear-gradient(135deg, #333, #2a2a2a);
+    margin-bottom: 10px;
+    border-radius: 8px;
+    transition: all 0.2s
+}
+
+.movie-item:hover {
+    background: linear-gradient(135deg, #3a3a3a, #323232);
+    border-color: var(--accent-yellow);
+    box-shadow: 0 4px 12px rgba(255, 193, 7, 0.2)
+}
+
+.movie-item .title {
+    flex: 1;
+    font-weight: 500;
+    color: #fff
+}
+
+.movie-item .stars {
+    margin-left: 12px;
+    color: var(--accent-yellow);
+    font-size: 1.1rem
+}
+
+.star {
+    margin-right: 4px
+}
+
+.delete {
+    background: transparent;
+    border: none;
+    color: #ff6b6b;
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: all 0.2s
+}
+
+.delete:hover {
+    color: #ff8787;
+    transform: scale(1.2)
+}
+
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr;
+        gap: 16px
+    }
+
+    .movie-section {
+        grid-column: 1
+    }
+}
